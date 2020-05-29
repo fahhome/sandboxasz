@@ -1,2 +1,0 @@
-# sandboxasz
-Created with CodeSandbox
