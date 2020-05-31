@@ -1,11 +1,29 @@
 import React from "react";
-import "./styles.css";
+import "./App.css";
+import Todostab from "./components/Todostab.js";
+import Userstab from "./components/Userstab.js";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-export default function App() {
+function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <Router>
+      <div className="App">
+        <h1>ToDo Application</h1>
+        <Link to="/">
+          <button>Todo</button>
+        </Link>
+        <Link to="/users">
+          <button>Users</button>
+        </Link>
+
+        <Switch>
+          <Route path="/" exact component={Todostab} />
+
+          <Route path="/users" exact component={Userstab} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
+
+export default App;
